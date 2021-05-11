@@ -15,4 +15,4 @@ Kalender Bali merupakan sebuah library yang dapat digunakan untuk menghitung wuk
 - [ ] Dasa Wara
 
 # License
-Kalende Bali is freely distributable under the terms of the [MIT license](https://github.com/share424/kalender-bali/blob/master/LICENSE).
+Kalender Bali is freely distributable under the terms of the [MIT license](https://github.com/share424/kalender-bali/blob/master/LICENSE).
