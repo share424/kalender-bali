@@ -1,0 +1,12 @@
+export declare const getEkaWara: (date: Date) => number;
+export declare const getDwiWara: (date: Date) => number;
+export declare const getTriWara: (date: Date) => number | null;
+export declare const triWaraToString: (triWara: number) => string;
+export declare const getCaturWara: (date: Date) => number | null;
+export declare const caturWaraToString: (caturWara: number) => string;
+export declare const getPancaWara: (date: Date) => number | null;
+export declare const pancaWaraToString: (pancaWara: number) => string;
+export declare const getSadWara: (date: Date) => number | null;
+export declare const sadWaraToString: (sadWara: number) => string;
+export declare const getSaptaWara: (date: Date) => number;
+//# sourceMappingURL=wewaran.d.ts.map
