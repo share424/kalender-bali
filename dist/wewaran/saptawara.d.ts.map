@@ -1,1 +1,1 @@
-{"version":3,"file":"saptawara.d.ts","sourceRoot":"","sources":["../../src/wewaran/saptawara.ts"],"names":[],"mappings":"AAAA,OAAO,OAAO,MAAM,WAAW,CAAC;AAiChC,qBAAa,SAAU,SAAQ,OAAO;gBAEtB,OAAO,EAAE,MAAM;IAI3B,SAAS,CAAC,KAAK,EAAE,MAAM,GAAG,MAAM;CAInC"}
+{"version":3,"file":"saptawara.d.ts","sourceRoot":"","sources":["../../src/wewaran/saptawara.ts"],"names":[],"mappings":"AAAA,OAAO,OAAO,MAAM,WAAW,CAAC;AAiChC,qBAAa,SAAU,SAAQ,OAAO;gBAEtB,OAAO,EAAE,MAAM;CAI9B"}

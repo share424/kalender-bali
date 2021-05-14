@@ -29,4 +29,8 @@ export class PancaWara extends Wewaran {
         super(pawukon, 5, PANCA_WARA);
     }
 
+    normalize(value: number): number {
+        return value;
+    }
+
 }

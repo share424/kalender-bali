@@ -63,6 +63,14 @@ var SangaWara = /** @class */ (function (_super) {
     function SangaWara(pawukon) {
         return _super.call(this, pawukon, 9, SANGA_WARA) || this;
     }
+    SangaWara.prototype.process = function (pawukon) {
+        if (pawukon < 5) {
+            return 1;
+        }
+        else {
+            return (pawukon + 6) % this.modulo;
+        }
+    };
     return SangaWara;
 }(wewaran_1.default));
 exports.SangaWara = SangaWara;

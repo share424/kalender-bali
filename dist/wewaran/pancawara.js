@@ -47,6 +47,9 @@ var PancaWara = /** @class */ (function (_super) {
     function PancaWara(pawukon) {
         return _super.call(this, pawukon, 5, PANCA_WARA) || this;
     }
+    PancaWara.prototype.normalize = function (value) {
+        return value;
+    };
     return PancaWara;
 }(wewaran_1.default));
 exports.PancaWara = PancaWara;

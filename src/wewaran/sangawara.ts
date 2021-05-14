@@ -45,4 +45,12 @@ export class SangaWara extends Wewaran {
         super(pawukon, 9, SANGA_WARA);
     }
 
+    process(pawukon: number): number {
+        if(pawukon < 5) {
+            return 1;
+        } else {
+            return (pawukon + 6) % this.modulo;
+        }
+    }
+
 }

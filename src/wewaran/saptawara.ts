@@ -37,8 +37,4 @@ export class SaptaWara extends Wewaran {
         super(pawukon, 7, SAPTA_WARA);
     }
 
-    normalize(value: number): number {
-        return value;
-    }
-
 }

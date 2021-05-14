@@ -55,9 +55,6 @@ var SaptaWara = /** @class */ (function (_super) {
     function SaptaWara(pawukon) {
         return _super.call(this, pawukon, 7, SAPTA_WARA) || this;
     }
-    SaptaWara.prototype.normalize = function (value) {
-        return value;
-    };
     return SaptaWara;
 }(wewaran_1.default));
 exports.SaptaWara = SaptaWara;

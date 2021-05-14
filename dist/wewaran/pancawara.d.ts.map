@@ -1,1 +1,1 @@
-{"version":3,"file":"pancawara.d.ts","sourceRoot":"","sources":["../../src/wewaran/pancawara.ts"],"names":[],"mappings":"AAAA,OAAO,OAAO,MAAM,WAAW,CAAC;AAyBhC,qBAAa,SAAU,SAAQ,OAAO;gBAEtB,OAAO,EAAE,MAAM;CAI9B"}
+{"version":3,"file":"pancawara.d.ts","sourceRoot":"","sources":["../../src/wewaran/pancawara.ts"],"names":[],"mappings":"AAAA,OAAO,OAAO,MAAM,WAAW,CAAC;AAyBhC,qBAAa,SAAU,SAAQ,OAAO;gBAEtB,OAAO,EAAE,MAAM;IAI3B,SAAS,CAAC,KAAK,EAAE,MAAM,GAAG,MAAM;CAInC"}

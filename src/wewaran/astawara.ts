@@ -42,10 +42,10 @@ export class AstaWara extends Wewaran {
     }
 
     process(pawukon: number): number {
-        if(pawukon < 77) {
-            return (pawukon + 2) % this.modulo;
-        } else if(pawukon > 79) {
+        if(pawukon < 71) {
             return pawukon % this.modulo;
+        } else if(pawukon > 73) {
+            return (pawukon - 2) % this.modulo;
         } else {
             return 7;
         }

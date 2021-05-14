@@ -1,5 +1,6 @@
 const KalenderBali = require('../dist/kalender-bali').default;
 
+// ==================== WUKU ========================
 test('wuku on 2021-05-01 should be langkir', () => {
     const date = new KalenderBali('2021-05-01')
     expect(date.wuku.name).toBe('langkir');
@@ -14,6 +15,7 @@ test('wuku on 1599-12-25 should be throw date out of range exception', () => {
     expect(() => new KalenderBali('1599-12-25')).toThrow('the given date is out of range');
 }) 
 
+// ====================== EKAWARA =======================
 test('eka wara on 2021-05-29 should be luang', () => {
     const date = new KalenderBali('2021-05-29')
     expect(date.ekawara.name).toBe('luang');
@@ -24,6 +26,7 @@ test('eka wara on 1600-04-22 should be undefined', () => {
     expect(date.ekawara.name).toBe('undefined');
 });
 
+// ====================== DWIWARA =======================
 test('dwi wara on 2021-05-29 should be pepet', () => {
     const date = new KalenderBali('2021-05-29')
     expect(date.dwiwara.name).toBe('pepet');
@@ -34,6 +37,7 @@ test('dwi wara on 1600-04-22 should be menga', () => {
     expect(date.dwiwara.name).toBe('menga');
 });
 
+// ====================== TRIWARA =======================
 test('tri wara on 2021-05-11 should be beteng', () => {
     const date = new KalenderBali('2021-05-11')
     expect(date.triwara.name).toBe('beteng');
@@ -44,6 +48,7 @@ test('tri wara on 1600-01-03 should be kajeng', () => {
     expect(date.triwara.name).toBe('kajeng');
 });
 
+// ====================== CATURWARA =======================
 test('catur wara on 1600-01-04 should be laba', () => {
     const date = new KalenderBali('1600-01-04')
     expect(date.caturwara.name).toBe('laba');
@@ -74,6 +79,7 @@ test('catur wara on 2021-05-29 should be sri', () => {
     expect(date.caturwara.name).toBe('sri');
 });
 
+// ====================== PANCAWARA =======================
 test('panca wara on 2021-05-29 should be kliwon', () => {
     const date = new KalenderBali('2021-05-29')
     expect(date.pancawara.name).toBe('kliwon');
@@ -89,6 +95,7 @@ test('panca wara on 1600-01-04 should be paing', () => {
     expect(date.pancawara.name).toBe('paing');
 });
 
+// ====================== SADWARA =======================
 test('sad wara on 2021-05-29 should be was', () => {
     const date = new KalenderBali('2021-05-29')
     expect(date.sadwara.name).toBe('was');
@@ -104,6 +111,7 @@ test('sad wara on 1600-01-04 should be paniron', () => {
     expect(date.sadwara.name).toBe('paniron');
 });
 
+// ====================== SAPTAWARA =======================
 test('sapta wara on 2025-04-22 should be anggara', () => {
     const date = new KalenderBali('2025-04-22')
     expect(date.saptawara.name).toBe('anggara');
@@ -119,6 +127,7 @@ test('sapta wara on 2021-05-14 should be sukra', () => {
     expect(date.saptawara.name).toBe('sukra');
 });
 
+// ====================== ASTAWARA =======================
 test('asta wara on 1600-01-04 should be brahma', () => {
     const date = new KalenderBali('1600-01-04')
     expect(date.astawara.name).toBe('brahma');
@@ -149,6 +158,7 @@ test('asta wara on 2021-05-29 should be ludra', () => {
     expect(date.astawara.name).toBe('ludra');
 });
 
+// ====================== SANGAWARA =======================
 test('sanga wara on 2025-04-22 should be urungan', () => {
     const date = new KalenderBali('2025-04-22')
     expect(date.sangawara.name).toBe('urungan');
@@ -164,6 +174,37 @@ test('sanga wara on 2021-05-29 should be tulus', () => {
     expect(date.sangawara.name).toBe('tulus');
 });
 
+test('sanga wara on 2025-02-08 should be dadi', () => {
+    const date = new KalenderBali('2025-02-08')
+    expect(date.sangawara.name).toBe('dadi');
+});
+
+test('sanga wara on 2025-02-09 should be dangu', () => {
+    const date = new KalenderBali('2025-02-09')
+    expect(date.sangawara.name).toBe('dangu');
+});
+
+test('sanga wara on 2025-02-10 should be dangu', () => {
+    const date = new KalenderBali('2025-02-10')
+    expect(date.sangawara.name).toBe('dangu');
+});
+
+test('sanga wara on 2025-02-11 should be dangu', () => {
+    const date = new KalenderBali('2025-02-11')
+    expect(date.sangawara.name).toBe('dangu');
+});
+
+test('sanga wara on 2025-02-12 should be dangu', () => {
+    const date = new KalenderBali('2025-02-12')
+    expect(date.sangawara.name).toBe('dangu');
+});
+
+test('sanga wara on 2025-02-13 should be jangur', () => {
+    const date = new KalenderBali('2025-02-13')
+    expect(date.sangawara.name).toBe('jangur');
+});
+
+// ====================== DASAWARA =======================
 test('dasa wara on 2025-04-22 should be raja', () => {
     const date = new KalenderBali('2025-04-22')
     expect(date.dasawara.name).toBe('raja');

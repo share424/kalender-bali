@@ -33,7 +33,7 @@ export default class KalenderBali {
         this.dayOfWeeks = this.date.getDay();
 
         // calculate pawukon
-        this.pawukon = (this.wuku.value + 1) * 7 + this.dayOfWeeks;
+        this.pawukon = this.wuku.value * 7 + this.dayOfWeeks + 1;
 
         // calculate wewaran
         this.ekawara = new EkaWara(this.pawukon);
