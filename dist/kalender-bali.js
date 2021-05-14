@@ -3,10 +3,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var wewaran_1 = require("./wewaran");
-var wuku_1 = __importDefault(require("./wuku"));
-var KalenderBali = /** @class */ (function () {
-    function KalenderBali(date) {
+const wewaran_1 = require("./wewaran");
+const wuku_1 = __importDefault(require("./wuku"));
+class KalenderBali {
+    constructor(date) {
         this.date = new Date();
         if (typeof date == 'string') {
             this.date = new Date(Date.parse(date));
@@ -32,7 +32,6 @@ var KalenderBali = /** @class */ (function () {
         this.sangawara = new wewaran_1.SangaWara(this.pawukon);
         this.dasawara = new wewaran_1.DasaWara(this.pawukon);
     }
-    return KalenderBali;
-}());
+}
 exports.default = KalenderBali;
 //# sourceMappingURL=kalender-bali.js.map

@@ -1,26 +1,11 @@
 "use strict";
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SangaWara = void 0;
-var wewaran_1 = __importDefault(require("./wewaran"));
-var SANGA_WARA = [
+const wewaran_1 = __importDefault(require("./wewaran"));
+const SANGA_WARA = [
     {
         name: 'dangu',
         urip: 9
@@ -58,20 +43,18 @@ var SANGA_WARA = [
         urip: 4
     }
 ];
-var SangaWara = /** @class */ (function (_super) {
-    __extends(SangaWara, _super);
-    function SangaWara(pawukon) {
-        return _super.call(this, pawukon, 9, SANGA_WARA) || this;
+class SangaWara extends wewaran_1.default {
+    constructor(pawukon) {
+        super(pawukon, 9, SANGA_WARA);
     }
-    SangaWara.prototype.process = function (pawukon) {
+    process(pawukon) {
         if (pawukon < 5) {
             return 1;
         }
         else {
             return (pawukon + 6) % this.modulo;
         }
-    };
-    return SangaWara;
-}(wewaran_1.default));
+    }
+}
 exports.SangaWara = SangaWara;
 //# sourceMappingURL=sangawara.js.map
