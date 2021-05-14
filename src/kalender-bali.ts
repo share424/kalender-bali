@@ -1,30 +1,23 @@
-import { getWuku, getWukuInRange, wukuToString } from './wuku';
-import { 
-    getEkaWara, 
-    getDwiWara, 
-    getTriWara,
-    getCaturWara,
-    getPancaWara,
-    getSadWara,
-    triWaraToString,
-    caturWaraToString,
-    pancaWaraToString,
-    sadWaraToString
-} from './wewaran';
-
-const DAYS = [
-    'redite',
-    'soma',
-    'anggara',
-    'buda',
-    'wrhaspati',
-    'sukra',
-    'saniscara'
-];
+import { AstaWara, CaturWara, DasaWara, DwiWara, EkaWara, PancaWara, SadWara, SangaWara, SaptaWara, TriWara } from "./wewaran";
+import Wuku from "./wuku";
 
 export default class KalenderBali {
 
     private date: Date = new Date();
+    public wuku: Wuku
+    public pawukon: number;
+    private dayOfWeeks: number;
+
+    public ekawara: EkaWara;
+    public dwiwara: DwiWara;
+    public triwara: TriWara;
+    public caturwara: CaturWara;
+    public pancawara: PancaWara;
+    public sadwara: SadWara;
+    public saptawara: SaptaWara;
+    public astawara: AstaWara;
+    public sangawara: SangaWara;
+    public dasawara: DasaWara;
 
     constructor(date: string|Date|undefined) {
         if(typeof date == 'string') {
@@ -32,49 +25,28 @@ export default class KalenderBali {
         } else if(date instanceof Date) {
             this.date = date;
         }
-    }
 
-    getWuku(inString: boolean = false) {
-        const wuku = getWuku(this.date);
-        if(inString && wuku != null) return wukuToString(wuku);
-        return wuku;
-    }
+        // calculate wuku
+        this.wuku = new Wuku(this.date);
 
-    getWukuUntil(dt: Date, inString: boolean = false) {
-        const wukus = getWukuInRange(this.date, dt);
-        if(inString) return wukus?.map(wukuToString);
-        return wukus
-    }
+        // calculate day of weeks
+        this.dayOfWeeks = this.date.getDay();
 
-    getTriWara(inString: boolean = false) {
-        const triWara = getTriWara(this.date);
-        if(inString && triWara != null) return triWaraToString(triWara);
-        return triWara;
-    }
+        // calculate pawukon
+        this.pawukon = (this.wuku.value + 1) * 7 + this.dayOfWeeks;
 
-    getCaturWara(inString: boolean = false) {
-        const caturWara = getCaturWara(this.date);
-        if(inString && caturWara != null) return caturWaraToString(caturWara);
-        return caturWara;
-    }
-
-    getPancaWara(inString: boolean = false) {
-        const pancaWara = getPancaWara(this.date);
-        if(inString && pancaWara != null) return pancaWaraToString(pancaWara);
-        return pancaWara;
-    }
-
-    getSadWara(inString: boolean = false) {
-        const sadWara = getSadWara(this.date);
-        if(inString && sadWara != null) return sadWaraToString(sadWara);
-        return sadWara;
-    }
-
-    getDayOfWeek(pattern: string|undefined) {
-        if(pattern == 'd') {
-            return DAYS[this.date.getDay()];
-        }
-        return this.date.getDay();
+        // calculate wewaran
+        this.ekawara = new EkaWara(this.pawukon);
+        this.dwiwara = new DwiWara(this.pawukon);
+        this.triwara = new TriWara(this.pawukon);
+        this.caturwara = new CaturWara(this.pawukon);
+        this.pancawara = new PancaWara(this.pawukon);
+        this.sadwara = new SadWara(this.pawukon);
+        this.saptawara = new SaptaWara(this.pawukon);
+        this.astawara = new AstaWara(this.pawukon);
+        this.sangawara = new SangaWara(this.pawukon);
+        this.dasawara = new DasaWara(this.pawukon);
+        
     }
 
 }

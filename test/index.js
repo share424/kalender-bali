@@ -1,5 +1,8 @@
-const kalenderbali = require('../dist');
+const KalenderBali = require('../dist/kalender-bali').default;
+// const saptawara = require('../dist/wewaran/saptawara');
 
-const date = new kalenderbali.KalenderBali('2025-04-22')
+// console.log((new saptawara.SaptaWara(100)).value);
 
-console.log(date.getCaturWara(true));
+const date = new KalenderBali('2025-04-22')
+
+console.log(date.ekawara);

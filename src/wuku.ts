@@ -1,4 +1,5 @@
 import { differenceInWeeks } from './helper';
+import { DateOutOfRangeException } from './exception';
 
 const WUKU = [
     'sinta',
@@ -33,33 +34,32 @@ const WUKU = [
     'watugunung'
 ];
 
-const startDate = new Date(Date.parse('1599-12-26'));
-const startWuku = 18;
+export default class Wuku {
 
-export const getWuku = (date: Date): number | null => {
-    if(date < startDate) {
-        return null;
+    public value: number;
+
+    public name: string;
+
+    public readonly values: WukuValue[] = WUKU.map((wuku, value) => {
+        return { value, name: wuku }
+    });
+
+    public readonly startDate: Date = new Date(Date.parse('1599-12-26'));
+
+    public readonly startWuku: number = 18; // tambir
+
+    constructor(date: Date) {
+        if(date < this.startDate) {
+            throw new DateOutOfRangeException();
+        }
+        const weeks = differenceInWeeks(this.startDate, date);
+        this.value = (weeks + this.startWuku) % 30;
+        this.name = this.values[this.value].name;
     }
-    const weeks = differenceInWeeks(startDate, date)
-    const wuku = (weeks + startWuku) % 30;
-    return wuku;
+
 }
 
-export const getWukuInRange = (dt1: Date, dt2: Date): number[] | null => {
-    if(dt1 < startDate || dt2 < startDate || dt2 < dt1) {
-        return null;
-    }
-    const weeks = differenceInWeeks(startDate, dt1);
-    const diffWeeks = differenceInWeeks(dt1, dt2);
-    const wukus = [];
-    const start = (weeks + startWuku) % 30;
-    for(let i = 0; i<=diffWeeks; i++) {
-        const wuku = (start + i) % 30
-        wukus.push(wuku);
-    }
-    return wukus;
-}
-
-export const wukuToString = (wuku: number) => {
-    return WUKU[wuku];
+interface WukuValue {
+    value: number;
+    name: string;
 }

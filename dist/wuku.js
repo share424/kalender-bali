@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.wukuToString = exports.getWukuInRange = exports.getWuku = void 0;
 var helper_1 = require("./helper");
+var exception_1 = require("./exception");
 var WUKU = [
     'sinta',
     'landep',
@@ -34,34 +34,21 @@ var WUKU = [
     'dukut',
     'watugunung'
 ];
-var startDate = new Date(Date.parse('1599-12-26'));
-var startWuku = 18;
-var getWuku = function (date) {
-    if (date < startDate) {
-        return null;
+var Wuku = /** @class */ (function () {
+    function Wuku(date) {
+        this.values = WUKU.map(function (wuku, value) {
+            return { value: value, name: wuku };
+        });
+        this.startDate = new Date(Date.parse('1599-12-26'));
+        this.startWuku = 18; // tambir
+        if (date < this.startDate) {
+            throw new exception_1.DateOutOfRangeException();
+        }
+        var weeks = helper_1.differenceInWeeks(this.startDate, date);
+        this.value = (weeks + this.startWuku) % 30;
+        this.name = this.values[this.value].name;
     }
-    var weeks = helper_1.differenceInWeeks(startDate, date);
-    var wuku = (weeks + startWuku) % 30;
-    return wuku;
-};
-exports.getWuku = getWuku;
-var getWukuInRange = function (dt1, dt2) {
-    if (dt1 < startDate || dt2 < startDate || dt2 < dt1) {
-        return null;
-    }
-    var weeks = helper_1.differenceInWeeks(startDate, dt1);
-    var diffWeeks = helper_1.differenceInWeeks(dt1, dt2);
-    var wukus = [];
-    var start = (weeks + startWuku) % 30;
-    for (var i = 0; i <= diffWeeks; i++) {
-        var wuku = (start + i) % 30;
-        wukus.push(wuku);
-    }
-    return wukus;
-};
-exports.getWukuInRange = getWukuInRange;
-var wukuToString = function (wuku) {
-    return WUKU[wuku];
-};
-exports.wukuToString = wukuToString;
+    return Wuku;
+}());
+exports.default = Wuku;
 //# sourceMappingURL=wuku.js.map

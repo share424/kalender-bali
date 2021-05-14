@@ -1,4 +1,14 @@
-export declare const getWuku: (date: Date) => number | null;
-export declare const getWukuInRange: (dt1: Date, dt2: Date) => number[] | null;
-export declare const wukuToString: (wuku: number) => string;
+export default class Wuku {
+    value: number;
+    name: string;
+    readonly values: WukuValue[];
+    readonly startDate: Date;
+    readonly startWuku: number;
+    constructor(date: Date);
+}
+interface WukuValue {
+    value: number;
+    name: string;
+}
+export {};
 //# sourceMappingURL=wuku.d.ts.map

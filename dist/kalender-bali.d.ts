@@ -1,12 +1,20 @@
+import { AstaWara, CaturWara, DasaWara, DwiWara, EkaWara, PancaWara, SadWara, SangaWara, SaptaWara, TriWara } from "./wewaran";
+import Wuku from "./wuku";
 export default class KalenderBali {
     private date;
+    wuku: Wuku;
+    pawukon: number;
+    private dayOfWeeks;
+    ekawara: EkaWara;
+    dwiwara: DwiWara;
+    triwara: TriWara;
+    caturwara: CaturWara;
+    pancawara: PancaWara;
+    sadwara: SadWara;
+    saptawara: SaptaWara;
+    astawara: AstaWara;
+    sangawara: SangaWara;
+    dasawara: DasaWara;
     constructor(date: string | Date | undefined);
-    getWuku(inString?: boolean): string | number | null;
-    getWukuUntil(dt: Date, inString?: boolean): string[] | number[] | null | undefined;
-    getTriWara(inString?: boolean): string | number | null;
-    getCaturWara(inString?: boolean): string | number | null;
-    getPancaWara(inString?: boolean): string | number | null;
-    getSadWara(inString?: boolean): string | number | null;
-    getDayOfWeek(pattern: string | undefined): string | number;
 }
 //# sourceMappingURL=kalender-bali.d.ts.map
